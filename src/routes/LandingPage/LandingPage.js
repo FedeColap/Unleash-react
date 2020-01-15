@@ -9,6 +9,7 @@ class LandingPage extends Component {
         return (
             <>
             <div className="content">
+                <img src={require('./skeletor-laugh.png')} />
                 <JokeField />
                 <Foaas />
             </div>

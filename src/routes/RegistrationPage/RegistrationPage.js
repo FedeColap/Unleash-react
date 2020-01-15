@@ -12,6 +12,7 @@ class RegistrationPage extends Component {
                 <div className="content">
                     <RegistrationForm />
                     <section class="buttonSpace">
+                        <p>Please press Submit to go to the Login Page... the "Save" button doesn't work for now</p>
                         <p class="action"><Link to='/login'>Submit</Link></p>
                         <p class="action"><Link to='/'>Cancel</Link></p>
                     </section>

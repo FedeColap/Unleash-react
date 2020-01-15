@@ -57,6 +57,7 @@ class AddPage extends Component {
                     <button>Submit </button>
                 </form>
             </div>
+            <Link to='/landing'>Go back</Link>
             </>
           );
     }
