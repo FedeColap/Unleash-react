@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import './RegistrationForm.css'
 import ValidationError from '../ValidationError/ValidationError'
 
 class RegistrationForm extends Component {
@@ -61,8 +62,8 @@ class RegistrationForm extends Component {
         const password = this.state.password.value.trim();
         if (password.length === 0) {
           return "Password is required";
-        } else if (password.length < 6 || password.length > 72) {
-          return "Password must be between 6 and 72 characters long";
+        } else if (password.length < 6 || password.length > 20) {
+          return "Password must be between 6 and 20 characters long";
         } else if (!password.match(/[0-9]/)) {
           return "Password must contain at least one number";
         }
@@ -84,8 +85,8 @@ class RegistrationForm extends Component {
     
         return (
           <form className="registration" onSubmit={e => this.handleSubmit(e)}>
-            <h2>Register</h2>
-            <div className="registration__hint">* required field</div>
+            <h2>Register here</h2>
+            <p className="registration__hint">* required field</p>
             <div className="form-group">
               <label htmlFor="name">Name *</label>
               <input
@@ -109,9 +110,7 @@ class RegistrationForm extends Component {
               <div className="registration__hint">
                 6 to 72 characters, must include a number
               </div>
-              {this.state.password.touched && (
-                <ValidationError message={passwordError} />
-              )}
+              {this.state.password.touched && <ValidationError message={passwordError} />}
             </div>
             <div className="form-group">
               <label htmlFor="repeatPassword">Repeat Password *</label>
@@ -122,9 +121,7 @@ class RegistrationForm extends Component {
                 id="repeatPassword"
                 onChange={e => this.updateRepeatPassword(e.target.value)}
               />
-              {this.state.repeatPassword.touched && (
-                <ValidationError message={repeatPasswordError} />
-              )}
+              {this.state.repeatPassword.touched && <ValidationError message={repeatPasswordError} />}
             </div>
     
             <div className="registration__button__group">

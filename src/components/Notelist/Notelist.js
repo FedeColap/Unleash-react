@@ -6,8 +6,7 @@ class Notelist extends Component {
     static contextType = PersonalContext;
     state = {  }
     render() { 
-        // let content = this.context.notes.notes[0]
-        // console.log(content)
+
         return (
         <ul>
             {
