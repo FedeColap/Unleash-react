@@ -3,7 +3,7 @@ import Commands from '../Commands/Commands'
 import './Nav.css';
 
 class Nav extends Component {
-    state = {  }
+
     render() { 
         return (
             <nav>

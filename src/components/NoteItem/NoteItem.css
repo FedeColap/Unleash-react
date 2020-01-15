@@ -1,0 +1,6 @@
+.personalNotes {
+    border: 1px solid gray;
+    margin-bottom: 30px;
+    list-style-type: none;
+    padding: 15px;
+}

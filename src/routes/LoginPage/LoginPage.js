@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import LoginForm from '../../components/LoginForm/LoginForm'
+import PersonalContext from '../../PersonalContext'
 
 class LoginPage extends Component {
+    static contextType = PersonalContext;
     state = {  }
     render() { 
         return (
@@ -12,7 +14,7 @@ class LoginPage extends Component {
                 <div className="content">  
                     <LoginForm />
                     <section class="buttonSpace">
-                        <p class="action"><Link to='/landing'>Submit </Link></p>
+                        <p class="action"><Link to='/landing' onClick={this.context.loggingIn}>Submit </Link></p>
                         <p class="action"><Link to='/'>Cancel</Link></p>
                     </section>
                 </div>  
