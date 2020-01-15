@@ -1,0 +1,11 @@
+.foaas {
+    background-color: gray;
+}
+.inputArea {
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    display: inline-block;
+    margin: 14px;
+    align-items: space-between;
+}

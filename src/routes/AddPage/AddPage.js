@@ -7,7 +7,8 @@ class AddPage extends Component {
     static contextType = PersonalContext;
     state = { 
         id: "",
-        content: ""
+        content: "",
+        created: null
     }
 
     handleChange = (e) => {
@@ -15,19 +16,26 @@ class AddPage extends Component {
         this.setState({
             content : e.target.value
         })
+        const d = new Date();
+        console.log(d);
+        const date = d.toISOString();
+        console.log(date);
+        this.setState({
+            created: date
+        })
     }
     handleSubmit = (e) => {
         e.preventDefault();
-        // console.log(this.state)
-        
-        // AGGIUNGI UN RANDOM UUID ------------------------- E POI SET STATE
-        // const idNumber = Math.floor((Math.random() * 1000) + 1);
-        // console.log(idNumber)
+
+        // const d = new Date();
+        // console.log(d);
+        // const date = d.toISOString();
+        // console.log(date);
         // this.setState({
-        //     id: `${idNumber}`
+        //     created: date
         // })
-        // console.log(this.state.id)
         const note = this.state
+        console.log(note)
         this.props.history.push('/landing')
         this.context.addNote(note)
     }

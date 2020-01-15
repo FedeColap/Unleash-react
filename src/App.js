@@ -45,6 +45,7 @@ class App extends Component {
 
   addNote = note => {
     note.id = `${Math.floor((Math.random() * 10000) + 1)}`;
+
     console.log(note)
     console.log('adding the note')
     

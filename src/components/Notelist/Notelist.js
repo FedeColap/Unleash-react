@@ -16,6 +16,7 @@ class Notelist extends Component {
                   key={index}
                   id={note.id}
                   content={note.content}
+                  created={note.created}
                 />)
             }
         </ul>

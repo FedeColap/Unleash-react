@@ -25,13 +25,13 @@ class JokeField extends Component {
     render() { 
         return ( 
             <div>
-                <p>Click here to see the joke of the day... you need it!</p>
+                <h3>See the light in despair... get one joke a day!</h3>
                 <button
                     onClick={this.getjoke}>
                     click me 
                 </button>
                 <div>
-                    <p>{this.state.joke}</p>
+                    <h2>{this.state.joke}</h2>
                 </div>
             </div>
          );
