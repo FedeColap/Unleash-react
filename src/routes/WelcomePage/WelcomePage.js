@@ -19,7 +19,10 @@ class WelcomePage extends Component {
             
             <div className="content">
                 <h1>This is the welcome page of Unleash</h1>
-                <p>description of what the app does</p>
+                <p>When you receive so many automated calls on your phone<br />
+                   When your group decides to enter in a pub, but you forgot your ID and the guy at the entrance won't let you in <br />
+                   When you're stuck in traffic and a champion cuts the line and gets ahead of you<br />
+                   And yes, even when your boss says something mean, in front of everyone</p>
                 <p>Unleash is an app where you can write down all your bad thoughts and vent about people or situation you don't like</p>
                 <p> It's fun and therapeutic, you'll feel immediately better!</p>
             </div>
