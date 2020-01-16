@@ -16,9 +16,9 @@ class Commands extends Component {
     }
     renderLogoutLink() {
         return (
-          <div className='Header__logged-in'>
-            <p className='commands'><Link to='/add'>Add a note</Link></p>
-            <p className='commands' onClick={this.handleLogoutClick}><Link 
+          <div className='subcommands'>
+            <p className='redirects'><Link to='/add'>Add a note</Link></p>
+            <p className='redirects' onClick={this.handleLogoutClick}><Link 
                 to='/'
             >Logout</Link></p>
             
@@ -28,9 +28,9 @@ class Commands extends Component {
 
       renderLoginLink() {
         return (
-          <div className='Header__not-logged-in'>
-            <p className='commands'><Link to='/register'>Register</Link></p>
-            <p className='commands'><Link to='/login'>Log in</Link></p>
+          <div className='subcommands'>
+            <p className='redirects'><Link to='/register'>Register</Link></p>
+            <p className='redirects'><Link to='/login'>Log in</Link></p>
           </div>
         )
       }

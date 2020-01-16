@@ -1,11 +1,46 @@
 .foaas {
     background-color: gray;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+h1 {
+    text-align: center;
+    overflow-x: hidden;
 }
 .inputArea {
     background-color: pink;
     display: flex;
     flex-direction: row;
     display: inline-block;
-    margin: 14px;
+    margin: auto;
     align-items: space-between;
+}
+label {
+    font-size: 24px;
+}
+/* input {
+      border-top-style: hidden;
+      border-right-style: hidden;
+      border-left-style: hidden;
+      border-bottom-style: groove;
+} */
+/*for the phones*/
+@media screen and (max-width: 510px) {
+    h1 {
+        font-size: 40px;
+    }
+}
+/* for tablets */
+@media screen and (min-width: 510px) {
+    h1 {
+        font-size: 80px;
+    }
+}
+/* for computers */
+@media screen and (min-width: 1400px) {
+    h1 {
+        font-size: 80px;
+    }
 }

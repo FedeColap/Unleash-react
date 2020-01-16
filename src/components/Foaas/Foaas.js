@@ -28,15 +28,15 @@ class Foaas extends Component {
         // console.log(sentence)
         return (
             <div className='foaas'>
-                <h3>You know that, you need it! <br /> Say the name of the person you want to f*off</h3>
+                <h2>You know that, you need it! <br /> Say the name of the person you want to f*off</h2>
                 <div className="inputArea">
                     <label for="f-name">Write here</label>
                     <input type="text" name="f-name" id="f-name" placeholder="Rosy" onChange={this.handleChange}/>
                     <button onClick={this.fooaction}>F*U</button>
                 </div>
-                <h2>
+                <h1>
                     {this.state.showResult && sentence}
-                </h2>
+                </h1>
             </div>
           );
     }

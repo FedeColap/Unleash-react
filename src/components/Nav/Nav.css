@@ -1,10 +1,33 @@
 header {
-    font-size: 50px;
+    font-family: 'Permanent Marker', cursive;
+    color: #e6e6e6;
+
 }
 nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    background-color: pink;
+    /* background-color: #f2f2f2; */
+}
+/*for the phones*/
+@media screen and (max-width: 510px) {
+    header {
+        font-size: 40px;  
+        margin-left: 10px;
+    }
+}
+/* for tablets */
+@media screen and (min-width: 510px) {
+    header {
+        font-size: 50px; 
+        margin-left: 20px;
+    }
+}
+/* for computers */
+@media screen and (min-width: 1400px) {
+    header {
+        font-size: 50px;  
+        margin-left: 20px;
+    }
 }

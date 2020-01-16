@@ -17,7 +17,7 @@ class NoteItem extends Component {
                 <p>{this.props.content}</p>
                 {/* <p>{format(created, 'YYYY-MM')}</p> */}
                 <p className="date">{created}</p>
-                <button type='button' onClick={() => {this.context.deleteNote(noteId)}}>delete</button>
+                <button type='button' className="liButton" onClick={() => {this.context.deleteNote(noteId)}}>delete</button>
             </li>
             
           );

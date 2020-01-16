@@ -1,17 +1,25 @@
+.form-group {
+    /* background-color: yellow; */
+    margin-bottom: 50px;
+}
 .registration, .login {
-    background-color: gray;
+    /* background-color: gray; */
     display: inline-block;
-    width: 50%;
+    width: 100%;
     font-size: 24px;
-    margin-left: 50px;
+    margin: auto;
+    text-align: center;
 }
 label {
     margin-top: 50px;
     color: blueviolet;
 }
 input {
-    margin-bottom: 50px;
     margin-left: 15px;
     height: 30px;
     border-radius: 3px;
+    font-size: 24px;
+}
+button {
+    font-size: 24px;
 }

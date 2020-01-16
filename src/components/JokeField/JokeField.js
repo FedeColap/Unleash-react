@@ -25,7 +25,7 @@ class JokeField extends Component {
     render() { 
         return ( 
             <div>
-                <h3>See the light in despair... get one joke a day!</h3>
+                <h2>See the light in despair... get one joke a day!</h2>
                 <button
                     onClick={this.getjoke}>
                     click me 

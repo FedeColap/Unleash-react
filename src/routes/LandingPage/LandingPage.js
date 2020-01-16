@@ -8,14 +8,14 @@ class LandingPage extends Component {
     render() { 
         return (
             <>
-            <div className="content">
                 <img src={require('./skeletor-laugh.png')} />
-                <JokeField />
-                <Foaas />
-            </div>
-            <div>
-                <Notelist />
-            </div>
+                <div className="content">
+                    <JokeField />
+                    <Foaas />
+                </div>
+                <div>
+                    <Notelist />
+                </div>
             </>
         );
     }

@@ -8,7 +8,6 @@ class RegistrationPage extends Component {
         return (
             <>
                 <img src={require("./join.png")} alt="evil smile emoji" />
-                <h1>This is the register page of Unleash</h1>
                 <div className="content">
                     <RegistrationForm />
                     <section class="buttonSpace">

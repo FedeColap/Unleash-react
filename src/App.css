@@ -3,3 +3,95 @@
     /* border: 2px solid red; */
     box-sizing: border-box;
 }
+.App {
+    background-image: url("background.jpg");
+    background-size: cover;
+}
+button {
+    background-color: violet;
+}
+.caption {
+    text-align: center;
+}
+.content {
+    background-color: #e6e6e6;
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow:15px 15px 40px #800040;  
+}
+.container {
+    background-color: yellow;
+    width:50%;
+    display: block;
+    margin: auto;
+    margin-top: 100px;
+}
+div.polaroid {
+    width: 420px;
+    padding: 10px 10px 20px 10px;
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+  }
+  
+  div.rotate_right {
+    margin-left: 30px;
+    float: left;
+    -ms-transform: rotate(7deg); /* IE 9 */
+    -webkit-transform: rotate(7deg); /* Safari */
+    transform: rotate(7deg);
+  }
+  
+  div.rotate_left {
+    float: left;
+    -ms-transform: rotate(-8deg); /* IE 9 */
+    -webkit-transform: rotate(-8deg); /* Safari */
+    transform: rotate(-8deg);
+  }
+h2 {
+    text-align: center;
+}
+img {
+    display: block;
+    margin: auto;
+    border-radius: 7px;
+    margin-top: 20px;
+}
+.placeholder{
+    display: block;
+    height: 600px;
+}
+/*for the phones*/
+@media screen and (max-width: 510px) {
+    img {
+        width: 50%;
+    }
+    .imgPolaroid {
+        width: 200px;
+    }
+    div.polaroid {
+        width: 220px;
+    }
+}
+/* for tablets */
+@media screen and (min-width: 510px) {
+    .imgPolaroid {
+        width: 300px;
+    }
+    div.polaroid {
+        width: 320px;
+    }
+}
+/* for computers */
+@media screen and (min-width: 1400px) {
+    .imgPolaroid {
+        width: 400px;
+    }
+    div.polaroid {
+        width: 420px;
+    }
+}

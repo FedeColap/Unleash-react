@@ -10,7 +10,7 @@ class LoginPage extends Component {
         return (
             <>
                 <img src={require("./evil-spongebob.png")} alt="evil spongebob smiling" />
-                <h1>This is the login page of Unleash</h1>
+
                 <div className="content">  
                     <LoginForm />
                     <section class="buttonSpace">

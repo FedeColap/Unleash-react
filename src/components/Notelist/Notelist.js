@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import NoteItem from '../NoteItem/NoteItem'
 import PersonalContext from '../../PersonalContext'
+import '../NoteItem/NoteItem.css'
 
 class Notelist extends Component {
     static contextType = PersonalContext;
