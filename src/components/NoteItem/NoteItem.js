@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { format } from 'date-fns'
+import moment from 'moment';
 import PersonalContext from '../../PersonalContext'
 import './NoteItem.css'
 
@@ -15,8 +15,7 @@ class NoteItem extends Component {
             
             <li className="personalNotes">
                 <p>{this.props.content}</p>
-                {/* <p>{format(created, 'YYYY-MM')}</p> */}
-                <p className="date">{created}</p>
+                <p>{moment(created).format('DD MMM YYYY')}</p>
                 <button type='button' className="liButton" onClick={() => {this.context.deleteNote(noteId)}}>delete</button>
             </li>
             

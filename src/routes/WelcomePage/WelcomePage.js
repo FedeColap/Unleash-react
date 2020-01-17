@@ -23,8 +23,9 @@ class WelcomePage extends Component {
                    When your group decides to enter in a pub, but you forgot your ID and the guy at the entrance won't let you in <br />
                    When you're stuck in traffic and a champion cuts the line and gets ahead of you<br />
                    And yes, even when your boss says something mean, in front of everyone</p>
+                <p>Although we should all be nice and optimistic, we're humans. Wrong things can happen, and we need a stress relief.</p>
                 <p>Unleash is an app where you can write down all your bad thoughts and vent about people or situation you don't like</p>
-                <p> It's fun and therapeutic, you'll feel immediately better!</p>
+                <p>It's fun and therapeutic, you'll feel immediately better!</p>
             </div>
            </>
          );

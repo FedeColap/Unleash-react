@@ -5,7 +5,7 @@ import '../NoteItem/NoteItem.css'
 
 class Notelist extends Component {
     static contextType = PersonalContext;
-    state = {  }
+
     render() { 
 
         return (

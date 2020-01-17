@@ -9,24 +9,38 @@ import LandingPage from './routes/LandingPage/LandingPage'
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage'
 import AddPage from './routes/AddPage/AddPage'
 import PersonalContext from './PersonalContext'
-import NOTES from './dummy-notes.js'
-
-const notess = {NOTES}
-const notesArray = notess.NOTES
-console.log(notesArray)
 
 class App extends Component {
   
   constructor(props) {
     super(props);
     this.state = {
-      notes: notesArray,
+      notes: [],
       error: null,
       isLogged: false, 
     }
     this.loggingIn = this.loggingIn.bind(this)
     this.logginOut = this.logginOut.bind(this)
   }
+
+  retrieveTheInfos = () => {
+    const baseUrl = 'http://localhost:8000/notes';
+    console.log(baseUrl)
+    fetch(baseUrl)
+        .then(res => {
+        if (!res.ok) {
+            throw new Error(res.statusText);
+        }
+        return res.json();
+        })
+        .then((data) => {
+            this.setState({notes: data});
+        })
+        .catch(error => {
+            console.error({error});
+        });
+  }
+
 
   loggingIn () {
     console.log('loggingIn!')
@@ -63,8 +77,13 @@ class App extends Component {
       notes: notes
     })
   };
+
+  componentDidMount() {
+    this.retrieveTheInfos()
+  }
   
   render () {
+
     const value = {
       notes: this.state.notes,
       isLogged: this.state.isLogged,

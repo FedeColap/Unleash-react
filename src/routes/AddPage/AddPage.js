@@ -10,6 +10,7 @@ class AddPage extends Component {
         content: "",
         created: null
     }
+    
 
     handleChange = (e) => {
         console.log(e.target.value)
@@ -17,27 +18,19 @@ class AddPage extends Component {
             content : e.target.value
         })
         const d = new Date();
-        console.log(d);
+        // console.log(d);
         const date = d.toISOString();
-        console.log(date);
+        // console.log(date);
         this.setState({
             created: date
         })
     }
     handleSubmit = (e) => {
         e.preventDefault();
-
-        // const d = new Date();
-        // console.log(d);
-        // const date = d.toISOString();
-        // console.log(date);
-        // this.setState({
-        //     created: date
-        // })
         const note = this.state
         console.log(note)
-        this.props.history.push('/landing')
         this.context.addNote(note)
+        this.props.history.push('/landing')
     }
             
     
