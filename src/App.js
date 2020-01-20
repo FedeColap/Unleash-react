@@ -49,21 +49,6 @@ class App extends Component {
         console.error(error)
         this.setState({ error })
       })
-    // const baseUrl = 'http://localhost:8000/api/notes';
-    // console.log(baseUrl)
-    // fetch(baseUrl)
-    //     .then(res => {
-    //     if (!res.ok) {
-    //         throw new Error(res.statusText);
-    //     }
-    //     return res.json();
-    //     })
-    //     .then((data) => {
-    //         this.setState({notes: data});
-    //     })
-    //     .catch(error => {
-    //         console.error({error});
-    //     });
   }
 
 

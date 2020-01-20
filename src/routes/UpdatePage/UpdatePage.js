@@ -13,7 +13,7 @@ class UpdatePage extends Component {
     }
     componentDidMount() {
         const { noteId } = this.props.match.params
-        fetch(configuration.API_ENDPOINT + `/${noteId}`, {
+        fetch(`${configuration.API_ENDPOINT}/notes/${noteId}`, {
           method: 'GET',
           headers: {
             'authorization': `Bearer ${configuration.API_KEY}`
@@ -57,7 +57,7 @@ class UpdatePage extends Component {
         const { noteId } = this.props.match.params
         const { id, content, created } = this.state
         const newNote = { id, content, created }
-        fetch(configuration.API_ENDPOINT + `/${noteId}`, {
+        fetch(`${configuration.API_ENDPOINT}/notes/${noteId}`, {
             method: 'PATCH',
             body: JSON.stringify(newNote),
             headers: {
