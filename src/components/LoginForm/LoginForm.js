@@ -6,7 +6,7 @@ class LoginForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          name: {
+          username: {
             value: "",
             touched: false
           },
@@ -17,8 +17,8 @@ class LoginForm extends Component {
         };
       }
     
-      updateName(name) {
-        this.setState({ name: { value: name, touched: true } });
+      updateName(username) {
+        this.setState({ username: { value: username, touched: true } });
       }
     
       updatePassword(password) {
@@ -31,18 +31,18 @@ class LoginForm extends Component {
     
       handleSubmit(event) {
         event.preventDefault();
-        const { name, password } = this.state;
+        const { username, password } = this.state;
     
-        console.log("Name: ", name.value);
+        console.log("Username: ", username.value);
         console.log("Password: ", password.value);
 
       }
     
       validateName() {
-        const name = this.state.name.value.trim();
-        if (name.length === 0) {
+        const username = this.state.username.value.trim();
+        if (username.length === 0) {
           return "Name is required";
-        } else if (name.length < 3) {
+        } else if (username.length < 3) {
           return "Name must be at least 3 characters long";
         }
       }
@@ -66,26 +66,26 @@ class LoginForm extends Component {
           <form className="login" onSubmit={e => this.handleSubmit(e)}>
             <h2>Login</h2>
             <div className="form-group">
-              <label htmlFor="name">Name *</label>
-              <input
-                type="text"
-                className="login__control"
-                name="name"
-                id="name"
-                onChange={e => this.updateName(e.target.value)}
-              />
-              {this.state.name.touched && <ValidationError message={nameError} />}
+                <input
+                    type="text"
+                    className="registration__control"
+                    name="name"
+                    id="name"
+                    onChange={e => this.updateName(e.target.value)}
+                />
+                <label htmlFor="name">Name *</label>
+                {this.state.username.touched && <ValidationError message={nameError} />}
             </div>
             <div className="form-group">
-              <label htmlFor="password">Password *</label>
-              <input
-                type="password"
-                className="login__control"
-                name="password"
-                id="password"
-                onChange={e => this.updatePassword(e.target.value)}
-              />
-              {this.state.password.touched && <ValidationError message={passwordError} />}
+                <input
+                    type="password"
+                    className="registration__control"
+                    name="password"
+                    id="password"
+                    onChange={e => this.updatePassword(e.target.value)}
+                />
+                <label htmlFor="password">Password *</label>
+                {this.state.password.touched && <ValidationError message={passwordError} />}
             </div>
     
             <div className="login__button__group">

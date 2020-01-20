@@ -30,9 +30,9 @@ class Foaas extends Component {
             <div className='foaas'>
                 <h2>You know that, you need it! <br /> Say the name of the person you want to f*off</h2>
                 <div className="inputArea">
-                    <label for="f-name">Write here</label>
-                    <input type="text" name="f-name" id="f-name" placeholder="Rosy" onChange={this.handleChange}/>
-                    <button onClick={this.fooaction}>F*U</button>
+                    <input type="text" className="registration__control" name="f-name" id="f-name" onChange={this.handleChange}/>
+                    <button onClick={this.fooaction}>F*u</button>
+                    {/* <label for="f-name">Write here</label> */}
                 </div>
                 <h1>
                     {this.state.showResult && sentence}

@@ -38,15 +38,13 @@ class AddPage extends Component {
         const {note} = this.state
         return (
             <>
-            <h1>This is the add-note page of Unleash</h1>
+            {/* <h1>This is the add-note page of Unleash</h1> */}
             <div className='content'>
                 <h2>Throw your sh*t</h2>
-                <form
-                    onSubmit={this.handleSubmit}>
-                    <fieldset>
+                <form className="registration"
+                    onSubmit={this.handleSubmit}>                 
+                        <input type="text" className="registration__control"name="thoughts" id="thoughts" value={note} onChange={this.handleChange}/>  
                         <label for="thoughts">Vent here your thoughts</label>
-                        <input type="text" name="thoughts" id="thoughts" value={note} onChange={this.handleChange}/>  
-                    </fieldset>
                     <button>Submit </button>
                 </form>
             </div>

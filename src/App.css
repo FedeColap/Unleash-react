@@ -9,6 +9,7 @@
 }
 button {
     background-color: violet;
+    border-radius: 17px;
 }
 .caption {
     text-align: center;

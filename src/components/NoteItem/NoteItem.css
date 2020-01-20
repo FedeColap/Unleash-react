@@ -14,14 +14,15 @@ p {
     display: block;
 }
 .date {
-    color:aqua;
+    color:#11998e;
+    font-style: oblique;
     /* align-self: flex-end; */
 }
 button.liButton {
     align-self: flex-end;
-    margin-right: 0;
+    margin: 0 10px 0 0;
     background-color: red;
-    display: block;
+    display: inline-block;
 }
 ul {
 

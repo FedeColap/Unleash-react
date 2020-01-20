@@ -6,6 +6,7 @@ const PersonalContext = React.createContext({
     logginOut: () => {},
     addNote: () => {},
     deleteNote: () => {},
+    updateNote: () => {},
 })
 
 export default PersonalContext

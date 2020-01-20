@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   retrieveTheInfos = () => {
-    const baseUrl = 'http://localhost:8000/notes';
+    const baseUrl = 'http://localhost:8000/api/notes';
     console.log(baseUrl)
     fetch(baseUrl)
         .then(res => {

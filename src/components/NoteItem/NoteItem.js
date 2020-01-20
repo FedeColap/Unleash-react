@@ -15,8 +15,9 @@ class NoteItem extends Component {
             
             <li className="personalNotes">
                 <p>{this.props.content}</p>
-                <p>{moment(created).format('DD MMM YYYY')}</p>
+                <p className="date">{moment(created).format('DD MMM YYYY')}</p>
                 <button type='button' className="liButton" onClick={() => {this.context.deleteNote(noteId)}}>delete</button>
+                <button type='button' className="liButton" onClick={() => {this.context.updateNote(noteId)}}>update</button>
             </li>
             
           );
