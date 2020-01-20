@@ -1,14 +1,13 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import configuration from '../../configuration';
 import PersonalContext from '../../PersonalContext'
 
 
 class AddPage extends Component {
     static contextType = PersonalContext;
     state = { 
-        id: "",
-        content: "",
-        created: null
+        content: ""
     }
     
 
@@ -17,20 +16,32 @@ class AddPage extends Component {
         this.setState({
             content : e.target.value
         })
-        const d = new Date();
-        // console.log(d);
-        const date = d.toISOString();
-        // console.log(date);
-        this.setState({
-            created: date
-        })
     }
     handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault()
         const note = this.state
-        console.log(note)
-        this.context.addNote(note)
-        this.props.history.push('/landing')
+        fetch(`${configuration.API_ENDPOINT}/notes`, {
+        method: 'POST',
+        body: JSON.stringify(note),
+        headers: {
+            'content-type': 'application/json',
+            'authorization': `bearer ${configuration.API_KEY}`
+        }
+        })
+        .then(res => {
+            if (!res.ok) {
+                return res.json().then(error => Promise.reject(error))
+            }
+            return res.json()
+        })
+        .then(data => {
+            this.context.addNote(data)
+            this.props.history.push('/landing')
+        })
+        .catch(error => {
+            console.error(error)
+            this.setState({ error })
+        })
     }
             
     
@@ -38,7 +49,6 @@ class AddPage extends Component {
         const {note} = this.state
         return (
             <>
-            {/* <h1>This is the add-note page of Unleash</h1> */}
             <div className='content'>
                 <h2>Throw your sh*t</h2>
                 <form className="registration"

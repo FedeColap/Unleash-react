@@ -8,7 +8,9 @@ import LoginPage from './routes/LoginPage/LoginPage'
 import LandingPage from './routes/LandingPage/LandingPage'
 import NotFoundPage from './routes/NotFoundPage/NotFoundPage'
 import AddPage from './routes/AddPage/AddPage'
+import UpdatePage from './routes/UpdatePage/UpdatePage'
 import PersonalContext from './PersonalContext'
+import configuration from './configuration'
 
 class App extends Component {
   
@@ -24,21 +26,44 @@ class App extends Component {
   }
 
   retrieveTheInfos = () => {
-    const baseUrl = 'http://localhost:8000/api/notes';
-    console.log(baseUrl)
-    fetch(baseUrl)
-        .then(res => {
+    console.log(configuration.API_ENDPOINT)
+    fetch(`${configuration.API_ENDPOINT}/notes`, {
+      method: 'GET',
+      headers: {
+        'content-type': 'application/json',
+        'Authorization': `Bearer ${configuration.API_KEY}`
+      }
+    })
+      .then(res => {
         if (!res.ok) {
-            throw new Error(res.statusText);
+          console.log(res)
+          return res.json().then(error => Promise.reject(error))
         }
-        return res.json();
-        })
-        .then((data) => {
-            this.setState({notes: data});
-        })
-        .catch(error => {
-            console.error({error});
-        });
+        return res.json()
+      })
+      .then((data) => {
+        console.log(data)
+          this.setState({notes: data});
+          })
+      .catch(error => {
+        console.error(error)
+        this.setState({ error })
+      })
+    // const baseUrl = 'http://localhost:8000/api/notes';
+    // console.log(baseUrl)
+    // fetch(baseUrl)
+    //     .then(res => {
+    //     if (!res.ok) {
+    //         throw new Error(res.statusText);
+    //     }
+    //     return res.json();
+    //     })
+    //     .then((data) => {
+    //         this.setState({notes: data});
+    //     })
+    //     .catch(error => {
+    //         console.error({error});
+    //     });
   }
 
 
@@ -77,6 +102,16 @@ class App extends Component {
       notes: notes
     })
   };
+  updateNote = updatedNote => {
+       const newNotes = this.state.notes.map(nt =>
+         (nt.id === updatedNote.id)
+           ? updatedNote
+           : nt
+       )
+       this.setState({
+        notes: newNotes
+       })
+  };
 
   componentDidMount() {
     this.retrieveTheInfos()
@@ -90,7 +125,8 @@ class App extends Component {
       loggingIn: this.loggingIn,
       logginOut: this.logginOut,
       addNote: this.addNote,
-      deleteNote: this.deleteNote
+      deleteNote: this.deleteNote,
+      updateNote: this.updateNote
     }
     return (
       <PersonalContext.Provider value={value}>
@@ -103,6 +139,7 @@ class App extends Component {
             <Route path='/login' component={LoginPage} />
             <Route path='/landing' component={LandingPage} />
             <Route path='/add' component={AddPage} />
+            <Route path='/update/:noteId' component={UpdatePage} />
             <Route component={NotFoundPage} />
           </Switch>
         </main>
