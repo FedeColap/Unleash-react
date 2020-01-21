@@ -68,25 +68,22 @@ class App extends Component {
   }
 
   addNote = note => {
-    note.id = `${Math.floor((Math.random() * 10000) + 1)}`;
-
-    console.log(note)
     console.log('adding the note')
-    
     console.log(this.state.notes)
     this.setState({
         notes: [...this.state.notes, note],
     })
   }
   deleteNote = (noteId) => {
-    console.log(noteId)
     let notes = this.state.notes.filter(note => {
       return note.id !== noteId
     });
     this.setState({
       notes: notes
     })
+
   };
+
   updateNote = updatedNote => {
        const newNotes = this.state.notes.map(nt =>
          (nt.id === updatedNote.id)

@@ -19,38 +19,30 @@ class UpdatePage extends Component {
             'authorization': `Bearer ${configuration.API_KEY}`
           }
         })
-          .then(res => {
+        .then(res => {
             if (!res.ok)
               return res.json().then(error => Promise.reject(error))
     
             return res.json()
-          })
-          .then(responseData => {
+        })
+        .then(responseData => {
             this.setState({
               id: responseData.id,
               content: responseData.content,
               created: responseData.created,
             })
-          })
-          .catch(error => {
+        })
+        .catch(error => {
             console.error(error)
             this.setState({ error })
-          })
-      }
-    
+        })
+    }
 
     handleChange = (e) => {
         console.log(e.target.value)
         this.setState({
             content : e.target.value
         })
-        // const d = new Date();
-        // console.log(d);
-        // const date = d.toISOString();
-        // console.log(date);
-        // this.setState({
-        //     created: date
-        // })
     }
     handleSubmit = (e) => {
         e.preventDefault()
@@ -101,8 +93,9 @@ class UpdatePage extends Component {
                     <button>Submit </button>
                     <button type='button' onClick={this.handleClickCancel}>
                         Cancel
-        </button>
+                    </button>
                 </form>
+
             </div>
             <Link to='/landing'>Go back</Link>
             </>
