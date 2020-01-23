@@ -1,16 +1,19 @@
+/*FOR INPUT STYLING REFER TO REGISTRATION-form STYLESHEET*/
+
 .foaas {
-    background-color: gray;
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.fuButton {
+    margin-top: 30px;
 }
 h1 {
     text-align: center;
     overflow-x: hidden;
 }
 .inputArea {
-    background-color: pink;
     display: flex;
     flex-direction: row;
     display: inline-block;

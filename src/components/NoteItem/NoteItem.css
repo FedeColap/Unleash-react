@@ -1,11 +1,28 @@
-p {
-    font-size: 24px;
+
+.listCommands {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+}
+p.update {
+    display: inline-block;
+    /* display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: stretch; */
+    background-color: #1BB1DC;
+    border-radius: 30px;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+p.update:hover {
+    box-shadow:10px 10px 25px #800040;  
 }
 .personalNotes {
     background-color: #e6e6e6;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 30px;
-    /* margin: auto; */
     list-style-type: none;
     padding: 15px;
     width: 100%;
@@ -16,17 +33,64 @@ p {
 .date {
     color:#11998e;
     font-style: oblique;
+    font-family: 'Permanent Marker', cursive;
     /* align-self: flex-end; */
 }
 button.liButton {
     align-self: flex-end;
     margin: 0 10px 0 0;
-    background-color: red;
+    /* margin: auto; */
     display: inline-block;
+
 }
 ul {
-
-    width: 80%;
     margin: auto;
     padding: 0;
+}
+/*for the phones*/
+@media screen and (max-width: 510px) {
+    button.liButton {
+        font-size: 16px;
+    }
+    ul {
+        width: 80%;
+    }
+    .update {
+        border-radius: 30px;
+        width: 90%;
+        height: 40px;
+        font-size: 16px;
+    }
+}
+/* for tablets */
+@media screen and (min-width: 510px) {
+    button.liButton {
+        font-size: 24px;
+        width: 170px;
+    }
+    ul {
+        width: 80%;
+    }
+    .update {
+        border-radius: 30px;
+        width: 170px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+/* for computers */
+@media screen and (min-width: 1400px) {
+    button.liButton {
+        font-size: 24px;
+        width: 170px;
+    }
+    ul {
+        width: 60%;
+    }
+    .update {
+        border-radius: 30px;
+        width: 170px;
+        height: 50px;
+        font-size: 24px;
+    }
 }

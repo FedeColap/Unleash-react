@@ -31,7 +31,7 @@ class JokeField extends Component {
                     click me 
                 </button>
                 <div>
-                    <h2>{this.state.joke}</h2>
+                    <h2 className="joke">{this.state.joke}</h2>
                 </div>
             </div>
          );

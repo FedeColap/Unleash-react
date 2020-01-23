@@ -11,6 +11,7 @@ import AddPage from './routes/AddPage/AddPage'
 import UpdatePage from './routes/UpdatePage/UpdatePage'
 import PersonalContext from './PersonalContext'
 import configuration from './configuration'
+import TokenService from './services/token-service'
 
 class App extends Component {
   
@@ -31,7 +32,8 @@ class App extends Component {
       method: 'GET',
       headers: {
         'content-type': 'application/json',
-        'Authorization': `Bearer ${configuration.API_KEY}`
+        'authorization': `basic ${TokenService.getAuthToken()}`,
+        // 'Authorization': `Bearer ${configuration.API_KEY}`
       }
     })
       .then(res => {
@@ -81,7 +83,7 @@ class App extends Component {
     this.setState({
       notes: notes
     })
-
+    
   };
 
   updateNote = updatedNote => {

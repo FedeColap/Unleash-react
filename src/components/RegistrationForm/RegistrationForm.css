@@ -1,7 +1,20 @@
-.form-group {
-    /* background-color: purple; */
-    margin-bottom: 50px;
+button {
+  font-size: 24px;
+  display: block;
+  margin: auto;
 }
+.form-group {
+    margin: auto;
+    /* padding-bottom: 50px; */
+}
+label {
+  display: block;
+  margin: auto;
+  width: 100%;
+  transition: 0.2s;
+  color: #11998e;
+  text-align: left;
+} 
 .registration, .login {
     /* background-color: gray; */
     display: inline-block;
@@ -10,13 +23,17 @@
     margin: auto;
     text-align: center;
 }
-button {
-    font-size: 24px;
+.registration__button__group, .login__button__group {
+  margin-top: 70px;
+}
+.registration__button, .login__button {
+  margin-top: 20px;
 }
 .registration__control {
   font-family: inherit;
-  width: 90%;
+  margin-top: 10px;
   border: 0;
+  width: 100%;
   border-bottom: 2px solid gray;
   outline: 0;
   font-size: 1.3rem;
@@ -36,16 +53,27 @@ button {
    font-family: 'Poppins', sans-serif; 
     font-size: 20px;
     color: #11998e;
+    margin-top: 7px;
 }
-label {
-  display: block;
-  /* background-color: orange; */
-  margin: auto;
-  width: 90%;
-  transition: 0.2s;
-  /* font-family: 'Poppins', sans-serif; 
-    font-size: 14px; */
-  color: #11998e;
-  text-align: left;
-} 
 
+/*for the phones*/
+@media screen and (max-width: 510px) {
+  .form-group {
+      width: 90%;
+  }
+  .registration__hint{
+    margin-top: 7px;
+  }
+}
+/* for tablets */
+@media screen and (min-width: 510px) {
+  .form-group {
+    width: 70%;
+  }
+}
+/* for computers */
+@media screen and (min-width: 1400px) {
+  .form-group {
+    width: 60%;
+  }
+}

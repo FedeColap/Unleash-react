@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import configuration from '../../configuration';
+import TokenService from '../../services/token-service'
 import PersonalContext from '../../PersonalContext'
 
 
@@ -25,7 +26,8 @@ class AddPage extends Component {
         body: JSON.stringify(note),
         headers: {
             'content-type': 'application/json',
-            'authorization': `bearer ${configuration.API_KEY}`
+            'authorization': `basic ${TokenService.getAuthToken()}`,
+            // 'authorization': `bearer ${configuration.API_KEY}`
         }
         })
         .then(res => {

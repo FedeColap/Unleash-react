@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
 import ValidationError from '../ValidationError/ValidationError'
+import TokenService from '../../services/token-service'
+import PersonalContext from '../../PersonalContext'
 import '../RegistrationForm/RegistrationForm.css'
 
 class LoginForm extends Component {
+  static contextType = PersonalContext;
+
+  static defaultProps = {
+    onLoginSuccess: () => {},
+    loggingIn: () => {}
+  }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -35,7 +44,11 @@ class LoginForm extends Component {
     
         console.log("Username: ", username.value);
         console.log("Password: ", password.value);
-
+        TokenService.saveAuthToken(
+            TokenService.makeBasicAuthToken(username.value, password.value)
+        )
+        this.props.onLoginSuccess()
+        this.context.loggingIn()
       }
     
       validateName() {
@@ -90,7 +103,7 @@ class LoginForm extends Component {
     
             <div className="login__button__group">
               <button type="reset" className="login__button">
-                Clear
+                clear
               </button>
               <button
                 type="submit"

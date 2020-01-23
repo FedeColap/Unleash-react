@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import moment from 'moment';
 import PersonalContext from '../../PersonalContext'
 import configuration from '../../configuration'
+import TokenService from '../../services/token-service'
 import './NoteItem.css'
 
 
@@ -16,16 +17,10 @@ class NoteItem extends Component {
       method: 'DELETE',
       headers: {
         'content-type': 'application/json',
-        'authorization': `bearer ${configuration.API_KEY}`
+        'authorization': `basic ${TokenService.getAuthToken()}`,
+        // 'authorization': `bearer ${configuration.API_KEY}`
       }
     })
-    // .then(res => {
-    //     if (!res.ok) {
-    //         return res.json().then(error => Promise.reject(error))
-    //     }
-    //     return data => this.context.deleteNote(noteId)
-    //     this.props.history.push('/landing')
-    // })
       .then(res => {
         if (!res.ok) {
           return res.json().then(error => Promise.reject(error))
@@ -51,9 +46,11 @@ class NoteItem extends Component {
             <li className="personalNotes">
                 <p>{this.props.content}</p>
                 <p className="date">{moment(created).format('DD MMM YYYY')}</p>
-                <button type='button' className="liButton" onClick={() => {this.preDeleteNote(noteId)}}>delete</button>
-                {/* <button type='button' className="liButton" onClick={() => {this.context.updateNote(noteId)}}>update</button> */}
-                <p className="redirects"><Link to={`/update/${noteId}`}>update</Link></p>
+                <div className="listCommands">
+                    <button type='button' className="liButton" onClick={() => {this.preDeleteNote(noteId)}}>delete</button>
+                    {/* <button type='button' className="liButton" onClick={() => {this.context.updateNote(noteId)}}>update</button> */}
+                    <p className="update"><Link to={`/update/${noteId}`}>update</Link></p>
+                </div>
             </li>
             
           );

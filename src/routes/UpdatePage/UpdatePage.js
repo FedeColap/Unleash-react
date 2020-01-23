@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import PersonalContext from '../../PersonalContext'
 import configuration from '../../configuration'
+import TokenService from '../../services/token-service'
 
 
 class UpdatePage extends Component {
@@ -16,7 +17,8 @@ class UpdatePage extends Component {
         fetch(`${configuration.API_ENDPOINT}/notes/${noteId}`, {
           method: 'GET',
           headers: {
-            'authorization': `Bearer ${configuration.API_KEY}`
+            // 'authorization': `Bearer ${configuration.API_KEY}`
+            'authorization': `basic ${TokenService.getAuthToken()}`,
           }
         })
         .then(res => {
@@ -54,7 +56,8 @@ class UpdatePage extends Component {
             body: JSON.stringify(newNote),
             headers: {
                 'content-type': 'application/json',
-                'authorization': `Bearer ${configuration.API_KEY}`
+                'authorization': `basic ${TokenService.getAuthToken()}`,
+                // 'authorization': `Bearer ${configuration.API_KEY}`
             },
         })
         .then(res => {

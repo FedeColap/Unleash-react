@@ -19,9 +19,13 @@
 }
 a {
     color: white;
+    text-decoration: none;
 }
 /*for the phones*/
 @media screen and (max-width: 510px) {
+    a {
+        font-size: 20px;
+    }
     .commands {
         width: 50%;
     }
@@ -31,6 +35,9 @@ a {
 }
 /* for tablets */
 @media screen and (min-width: 510px) {
+    a {
+        font-size: 25px;
+    }
     .commands {
         width: 30%;
     }
@@ -40,6 +47,9 @@ a {
 }
 /* for computers */
 @media screen and (min-width: 1400px) {
+    a {
+        font-size: 25px;
+    }
     .commands {
         width: 30%;
     }

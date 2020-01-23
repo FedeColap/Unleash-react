@@ -3,24 +3,37 @@
     /* border: 2px solid red; */
     box-sizing: border-box;
 }
+a {
+    text-decoration: none;
+    /* border: 2px solid red; */
+    color: red;
+    background-color: red;
+}
 .App {
     background-image: url("background.jpg");
     background-size: cover;
 }
 button {
-    background-color: violet;
-    border-radius: 17px;
+    background-color: #1BB1DC;
+    border-radius: 30px;
+    color: white;
+    display: inline-block;
+    padding: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+button:hover {
+    box-shadow:10px 10px 25px #800040;  
 }
 .caption {
     text-align: center;
 }
 .content {
     background-color: #e6e6e6;
-    width: 80%;
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
-    border-radius: 7px;
+    border-radius: 10px;
     padding: 10px;
     box-shadow:15px 15px 40px #800040;  
 }
@@ -62,37 +75,87 @@ img {
     border-radius: 7px;
     margin-top: 20px;
 }
+.joke {
+    background-color: yellow;
+    margin-top: 70px;
+    font-family: 'Permanent Marker';
+}
 .placeholder{
     display: block;
     height: 600px;
 }
 /*for the phones*/
 @media screen and (max-width: 510px) {
-    img {
-        width: 50%;
+    a {
+        font-size: 16px;
     }
+    button {
+        border-radius: 30px;
+        width: 90%;
+        height: 40px;
+        font-size: 16px;
+    }
+    .content {
+        width: 80%;
+    }
+    img {
+        width: 80%;
+    }
+
     .imgPolaroid {
         width: 200px;
     }
     div.polaroid {
         width: 220px;
     }
+    p {
+        font-size: 20;
+    }
 }
 /* for tablets */
 @media screen and (min-width: 510px) {
+    button {
+        border-radius: 30px;
+        width: 300px;
+        height: 50px;
+    }
+    .content {
+        width: 80%;
+    }
+    img {
+        width: 55%;
+    }
     .imgPolaroid {
         width: 300px;
     }
     div.polaroid {
         width: 320px;
     }
+    p {
+        font-size: 25px;
+    }
 }
 /* for computers */
 @media screen and (min-width: 1400px) {
+    button {
+        border-radius: 30px;
+        padding: 0;
+        width: 300px;
+        height: 50px;
+    }
+    .content {
+        width: 60%;
+    }
+    img {
+        width: 400px;
+    }
     .imgPolaroid {
         width: 400px;
     }
     div.polaroid {
         width: 420px;
+    }
+    p {
+        font-size: 20px;
     }
 }
