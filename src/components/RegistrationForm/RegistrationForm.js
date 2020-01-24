@@ -1,8 +1,17 @@
 import React, { Component } from 'react'
 import './RegistrationForm.css'
 import ValidationError from '../ValidationError/ValidationError'
+import AuthApiService from '../../services/auth-api-service'
+
 
 class RegistrationForm extends Component {
+
+  static defaultProps = {
+    onRegistrationSuccess: () => {}
+  }
+
+  state = { error: null }
+  
     constructor(props) {
         super(props);
         this.state = {
@@ -41,12 +50,25 @@ class RegistrationForm extends Component {
       }
     
       handleSubmit(event) {
-        event.preventDefault();
-        const { username, password, repeatPassword } = this.state;
-    
-        console.log("Username: ", username.value);
-        console.log("Password: ", password.value);
-        console.log("Repeat Password: ", repeatPassword.value);
+          event.preventDefault();
+          const { username, password, repeatPassword } = this.state;
+      
+          console.log("Username: ", username.value);
+          console.log("Password: ", password.value);
+          console.log("Repeat Password: ", repeatPassword.value);
+          this.setState({ error: null })
+          AuthApiService.postUser({
+              username: username.value,
+              password: password.value,
+          })
+          .then(user => {
+              username.value = ''
+              password.value = ''
+              this.props.onRegistrationSuccess()
+          })
+          .catch(res => {
+              this.setState({ error: res.error })
+          })
       }
     
       validateName() {

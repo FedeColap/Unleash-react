@@ -24,7 +24,7 @@ class LoginPage extends Component {
                     <section class="buttonSpace">
                         {/* <p>Please press Submit to go to the Landing Page... the "login" button doesn't work for now</p>
                         <p class="action"><Link to='/landing' onClick={this.context.loggingIn}>Submit </Link></p> */}
-                        <p class="action"><Link to='/'>Cancel</Link></p>
+                        <Link className="action" to='/'>Cancel</Link>
                     </section>
                 </div>  
             </>
