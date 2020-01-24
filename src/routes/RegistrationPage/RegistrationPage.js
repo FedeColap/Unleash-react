@@ -16,8 +16,6 @@ class RegistrationPage extends Component {
                         onRegistrationSuccess={this.handleRegistrationSuccess}
                     />
                     <section class="buttonSpace">
-                        <p>Please press Submit to go to the Login Page... the "Save" button doesn't work for now</p>
-                        <p class="action"><Link to='/login'>Submit</Link></p>
                         <Link className="action" to='/'>Cancel</Link>
                     </section>
 

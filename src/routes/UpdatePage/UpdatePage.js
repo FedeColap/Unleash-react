@@ -87,14 +87,15 @@ class UpdatePage extends Component {
         const {note} = this.state
         return (
             <>
+            <img src={require("./wonka.png")} alt="Willy Wonka listening at you" />
             <div className='content'>
-                <h2>Throw your sh*t</h2>
+                <h2>Oops! Mispelling? </h2>
                 <form className="registration"
                     onSubmit={this.handleSubmit}>                 
                         <input type="text" className="registration__control"name="thoughts" id="thoughts" value={note} onChange={this.handleChange}/>  
                         <label for="thoughts">Correct your thoughts</label>
-                    <button>Submit </button>
-                    <button type='button' onClick={this.handleClickCancel}>
+                    <button className="registration__button">Submit </button>
+                    <button className="registration__button" type='button' onClick={this.handleClickCancel}>
                         Cancel
                     </button>
                 </form>

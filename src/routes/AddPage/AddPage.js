@@ -51,8 +51,9 @@ class AddPage extends Component {
         const {note} = this.state
         return (
             <>
+            <img src={require("./bomb.png")} alt="nuclear bomb" />
             <div className='content'>
-                <h2>Throw your sh*t</h2>
+                <h2>Drop your bomb here - not literally though!- </h2>
                 <form className="registration"
                     onSubmit={this.handleSubmit}>                 
                         <input type="text" className="registration__control"name="thoughts" id="thoughts" value={note} onChange={this.handleChange}/>  
