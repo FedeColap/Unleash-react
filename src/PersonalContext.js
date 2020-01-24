@@ -4,6 +4,7 @@ const PersonalContext = React.createContext({
     isLogged: null,
     loggingIn: () => {},
     logginOut: () => {},
+    retrieveTheInfos: () => {},
     addNote: () => {},
     deleteNote: () => {},
     updateNote: () => {},

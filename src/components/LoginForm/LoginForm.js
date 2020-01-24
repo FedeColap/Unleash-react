@@ -49,6 +49,7 @@ class LoginForm extends Component {
         )
         this.props.onLoginSuccess()
         this.context.loggingIn()
+        this.context.retrieveTheInfos()
       }
     
       validateName() {

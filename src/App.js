@@ -97,9 +97,9 @@ class App extends Component {
        })
   };
 
-  componentDidMount() {
-    this.retrieveTheInfos()
-  }
+  // componentDidMount() {
+  //   this.retrieveTheInfos()
+  // }
   
   render () {
 
@@ -108,6 +108,7 @@ class App extends Component {
       isLogged: this.state.isLogged,
       loggingIn: this.loggingIn,
       logginOut: this.logginOut,
+      retrieveTheInfos: this.retrieveTheInfos,
       addNote: this.addNote,
       deleteNote: this.deleteNote,
       updateNote: this.updateNote
