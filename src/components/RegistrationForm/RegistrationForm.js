@@ -62,6 +62,7 @@ class RegistrationForm extends Component {
               password: password.value,
           })
           .then(user => {
+              console.log(user)
               username.value = ''
               password.value = ''
               this.props.onRegistrationSuccess()
@@ -104,10 +105,14 @@ class RegistrationForm extends Component {
         const nameError = this.validateName();
         const passwordError = this.validatePassword();
         const repeatPasswordError = this.validateRepeatPassword();
-    
+        const { error } = this.state
+
         return (
           <form className="registration" onSubmit={e => this.handleSubmit(e)}>
             <h2>Welcome!</h2>
+            <div role='alert'>
+                {error && <p className='red'>{error}</p>}
+            </div>
             <div className="form-group">
                 <input
                     type="text"

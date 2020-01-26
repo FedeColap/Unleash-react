@@ -21,8 +21,8 @@ Nickname: __Juju__
 Password: __qwerty17__
 ___
 
-Screenshots
-![login page ][/loginscreen.png]
-![landing page ][/landingscreen.png]
-![update page for tablets][/tabletscreen.png]
+### Screenshots
+![login page ](/loginscreen.png "Unleash login page")
+![landing page ](/landingscreen.png "Unleash landing page")
+![update page for tablets](/tabletscreen.png "Unleash update page - tablets' view")
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ValidationError from '../ValidationError/ValidationError'
 import TokenService from '../../services/token-service'
 import PersonalContext from '../../PersonalContext'
+import AuthApiService from '../../services/auth-api-service'
 import '../RegistrationForm/RegistrationForm.css'
 
 class LoginForm extends Component {
@@ -23,6 +24,7 @@ class LoginForm extends Component {
             value: "",
             touched: false
           },
+          error: null
         };
       }
     
@@ -41,15 +43,25 @@ class LoginForm extends Component {
       handleSubmit(event) {
         event.preventDefault();
         const { username, password } = this.state;
-    
-        console.log("Username: ", username.value);
-        console.log("Password: ", password.value);
-        TokenService.saveAuthToken(
-            TokenService.makeBasicAuthToken(username.value, password.value)
-        )
-        this.props.onLoginSuccess()
-        this.context.loggingIn()
-        this.context.retrieveTheInfos()
+
+        //RIVEDERE QUESTO PERCHE PUNTA ALLO STESSO ENDPOINT DELLA REGISTRATION------------VEDI AUT-API-SERVICE
+        //POI, SINCE LAVORO SU /LOGIN, CAMBIA IL FETCH IN LOGIN
+              AuthApiService.postLogin({
+                username: username.value,
+                password: password.value,
+            })
+            .then(res => {
+              console.log(res)
+              TokenService.saveAuthToken(
+                    TokenService.makeBasicAuthToken(res.username, res.password)
+                )
+                this.props.onLoginSuccess()
+                this.context.loggingIn()
+                this.context.retrieveTheInfos()
+            })
+            .catch(res => {
+                this.setState({ error: res.error })
+            })
       }
     
       validateName() {
@@ -75,10 +87,14 @@ class LoginForm extends Component {
       render() {
         const nameError = this.validateName();
         const passwordError = this.validatePassword();
+        const { error } = this.state
     
         return (
           <form className="login" onSubmit={e => this.handleSubmit(e)}>
             <h2>Login</h2>
+            <div role='alert'>
+                {error && <p className='red'>{error}</p>}
+            </div>
             <div className="form-group">
                 <input
                     type="text"
@@ -120,22 +136,6 @@ class LoginForm extends Component {
           </form>
         );
       }
-    // state = {  }
-    // render() { 
-    //     return (
-    //         <form class="demo-form" action="/some-server-endpoint" method ="post">
-    //             <h1>Welcome back! Please log in.</h1>
-    //             <fieldset name="contact-info">
-
-    //                 <label for="nick-name">Nickname</label>
-    //                 <input type="text" name="nick-name" id="nick-name" />
-                        
-    //                 <label for="password" required>Password (8 characters minimum)</label>
-    //                 <input type="password" pattern="^[1-9]\d{2}-\d{3}-\d{4}" name="password" id="password" title="Select your password" minlength="8" />
-    //             </fieldset>
-    //         </form>
-    //       );
-    //}
 }
  
 export default LoginForm;
