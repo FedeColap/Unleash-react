@@ -2,7 +2,7 @@ import configuration from '../configuration.js'
 import TokenService from './token-service'
 
 const AuthApiService = {
-  //RIVEDERE QUESTO PERCHE PUNTA ALLO STESSO ENDPOINT DELLA REGISTRATION------------
+  
   postLogin({ username, password }) {
     return fetch(`${configuration.API_ENDPOINT}/login`, {
       method: 'POST',

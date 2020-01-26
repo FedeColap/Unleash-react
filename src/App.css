@@ -32,6 +32,10 @@ button:hover {
 .caption {
     text-align: center;
 }
+.cheating{
+    text-align: center;
+    color: white;
+}
 .content {
     background-color: #e6e6e6;
     margin: auto;

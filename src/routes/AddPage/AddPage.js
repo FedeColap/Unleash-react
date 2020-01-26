@@ -58,7 +58,7 @@ class AddPage extends Component {
                     onSubmit={this.handleSubmit}>                 
                         <input type="text" className="registration__control"name="thoughts" id="thoughts" value={note} onChange={this.handleChange}/>  
                         <label for="thoughts">Vent here your thoughts</label>
-                    <button>Submit </button>
+                    <button className="buttonSpace">Submit </button>
                 </form>
             </div>
             <Link to='/landing'>Go back</Link>

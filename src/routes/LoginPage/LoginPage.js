@@ -26,7 +26,11 @@ class LoginPage extends Component {
                         <p class="action"><Link to='/landing' onClick={this.context.loggingIn}>Submit </Link></p> */}
                         <Link className="action" to='/'>Cancel</Link>
                     </section>
-                </div>  
+                </div> 
+                <div className = "cheating">
+                        <p>Wanna play around without Registration? Use these credentials:</p>
+                        <p>Name: <strong>Juju</strong> - Password: <strong>qwerty17</strong></p>
+                </div> 
             </>
           );
     }

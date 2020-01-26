@@ -20,6 +20,10 @@ class RegistrationPage extends Component {
                     </section>
 
                 </div>
+                <div className = "cheating">
+                        <p>Wanna play around without Registration? Use these credentials:</p>
+                        <p>Name: <strong>Juju</strong> - Password: <strong>qwerty17</strong></p>
+                </div> 
             </>
           );
     }
