@@ -19,6 +19,11 @@ class WelcomePage extends Component {
                     <p>It's fun and therapeutic, you'll feel immediately better!</p>
                 </div>
             </div>
+            <div className = "cheating">
+                        <p>Ready to start? Click to Sign up in order to register <br /> 
+                        or go to Log in and use these credentials:</p>
+                        <p>Name: <strong>Juju</strong> - Password: <strong>qwerty17</strong></p>
+            </div>
            </>
          );
     }

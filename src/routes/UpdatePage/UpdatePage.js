@@ -17,7 +17,6 @@ class UpdatePage extends Component {
         fetch(`${configuration.API_ENDPOINT}/notes/${noteId}`, {
           method: 'GET',
           headers: {
-            // 'authorization': `Bearer ${configuration.API_KEY}`
             'authorization': `basic ${TokenService.getAuthToken()}`,
           }
         })

@@ -15,7 +15,7 @@ class RegistrationPage extends Component {
                     <RegistrationForm 
                         onRegistrationSuccess={this.handleRegistrationSuccess}
                     />
-                    <section class="buttonSpace">
+                    <section className="buttonSpace">
                         <Link className="action" to='/'>Cancel</Link>
                     </section>
 

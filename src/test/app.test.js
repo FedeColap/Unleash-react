@@ -12,6 +12,11 @@ import NoteItem from '../components/NoteItem/NoteItem'
 import RegistrationForm from '../components/RegistrationForm/RegistrationForm'
 import ValidationError from '../components/ValidationError/ValidationError'
 import AddPage from '../routes/AddPage/AddPage'
+import LandingPage from '../routes/LandingPage/LandingPage'
+import LoginPage from '../routes/LoginPage/LoginPage'
+import RegistrationPage from '../routes/RegistrationPage/RegistrationPage'
+import UpdatePage from '../routes/UpdatePage/UpdatePage'
+import WelcomePage from '../routes/WelcomePage/WelcomePage'
 
 
 
@@ -69,5 +74,30 @@ it('ValidationError component renders without crashing', () => {
 it('AddPage component renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<BrowserRouter><AddPage /></BrowserRouter>, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+it('LandingPage component renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<BrowserRouter><LandingPage /></BrowserRouter>, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+it('LoginPage component renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<BrowserRouter><LoginPage /></BrowserRouter>, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+it('RegistrationPage component renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<BrowserRouter><RegistrationPage /></BrowserRouter>, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+it.skip('UpdatePage component renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<BrowserRouter><UpdatePage /></BrowserRouter>, div);
+  ReactDOM.unmountComponentAtNode(div);
+});
+it('WelcomePage component renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<WelcomePage />, div);
   ReactDOM.unmountComponentAtNode(div);
 });

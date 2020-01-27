@@ -21,7 +21,7 @@ class LoginPage extends Component {
                         onLoginSuccess={this.handleLoginSuccess}
                         loggingIn = {this.props.loggingIn}
                     />
-                    <section class="buttonSpace">
+                    <section className="buttonSpace">
                         {/* <p>Please press Submit to go to the Landing Page... the "login" button doesn't work for now</p>
                         <p class="action"><Link to='/landing' onClick={this.context.loggingIn}>Submit </Link></p> */}
                         <Link className="action" to='/'>Cancel</Link>
