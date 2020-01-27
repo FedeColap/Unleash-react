@@ -44,7 +44,6 @@ class LoginForm extends Component {
         event.preventDefault();
         const { username, password } = this.state;
 
-        //RIVEDERE QUESTO PERCHE PUNTA ALLO STESSO ENDPOINT DELLA REGISTRATION------------VEDI AUT-API-SERVICE
         //POI, SINCE LAVORO SU /LOGIN, CAMBIA IL FETCH IN LOGIN
               AuthApiService.postLogin({
                 username: username.value,
